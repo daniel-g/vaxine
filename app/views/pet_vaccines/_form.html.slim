@@ -1,0 +1,18 @@
+= form_for @pet_vaccine do |f|
+  - if @pet_vaccine.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@pet_vaccine.errors.count, "error")} prohibited this pet_vaccine from being saved:"
+      ul
+        - @pet_vaccine.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :pet_id
+    = f.number_field :pet_id
+  .field
+    = f.label :vaccine_id
+    = f.number_field :vaccine_id
+  .field
+    = f.label :apply_at
+    = f.datetime_select :apply_at
+  .actions = f.submit

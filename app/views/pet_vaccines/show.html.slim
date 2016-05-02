@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Pet:
+  = @pet_vaccine.pet_id
+p
+  strong Vaccine:
+  = @pet_vaccine.vaccine_id
+p
+  strong Apply at:
+  = @pet_vaccine.apply_at
+
+= link_to 'Edit', edit_pet_vaccine_path(@pet_vaccine)
+'|
+= link_to 'Back', pet_vaccines_path

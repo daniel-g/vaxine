@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @pet.name
+p
+  strong Owner:
+  = @pet.owner_id
+p
+  strong Birthday:
+  = @pet.birthday
+
+= link_to 'Edit', edit_pet_path(@pet)
+'|
+= link_to 'Back', pets_path
