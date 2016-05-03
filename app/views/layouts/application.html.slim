@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title Vaxine
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+  body
+    nav
+      li= link_to 'Usuarios', users_path
+      li= link_to 'Vacunas', vaccines_path
+      li= link_to 'Mascotas', pets_path
+    = yield

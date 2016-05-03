@@ -1,10 +1,10 @@
-h1 Listing vaccines
+h1 Vacunas
 
 table
   thead
     tr
-      th Name
-      th Periodicity
+      th Nombre
+      th Aplicación (semanas)
       th
       th
       th
@@ -14,10 +14,10 @@ table
       tr
         td = vaccine.name
         td = vaccine.periodicity
-        td = link_to 'Show', vaccine
-        td = link_to 'Edit', edit_vaccine_path(vaccine)
-        td = link_to 'Destroy', vaccine, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', vaccine
+        td = link_to 'Editar', edit_vaccine_path(vaccine)
+        td = link_to 'Eliminar', vaccine, data: {:confirm => 'Está usted seguro?'}, :method => :delete
 
 br
 
-= link_to 'New Vaccine', new_vaccine_path
+= link_to 'Nueva Vacuna', new_vaccine_path
