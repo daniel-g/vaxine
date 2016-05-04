@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   expose(:user)
   expose(:users)
-  expose(:user_form){ NewUserForm.new(params[:user]) }
+  expose(:user_form){ NewUserForm.new(user_params, user: user) }
 
   # POST /users
   # POST /users.json
@@ -21,12 +21,12 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if user.update(user_params)
-        format.html { redirect_to user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+      if user_form.save
+        format.html { redirect_to user_form.user, notice: 'User was successfully updated.' }
+        format.json { render :show, status: :ok, location: user }
       else
         format.html { render :edit }
-        format.json { render json: user.errors, status: :unprocessable_entity }
+        format.json { render json: user_form.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,8 +43,9 @@ class UsersController < ApplicationController
 
   private
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:email)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    return {} unless params[:user].present?
+    params.require(:user).permit(:correo)
+  end
 end
