@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   expose(:user)
   expose(:users)
+  expose(:notes, ancestor: :user)
   expose(:user_form){ NewUserForm.new(user_params, user: user) }
   expose(:search_form){ SearchForm.new(search_params) }
 
@@ -27,7 +28,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if user_form.save
-        format.html { redirect_to user_form.user, notice: 'User was successfully updated.' }
+        format.html { redirect_to user_path(user_form.user), notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: user }
       else
         format.html { render :edit }
@@ -51,7 +52,7 @@ class UsersController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
     return {} unless params[:user].present?
-    params.require(:user).permit(:correo)
+    params.require(:user).permit(:correo, :type)
   end
 
   def search_params

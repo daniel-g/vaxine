@@ -10,13 +10,7 @@ table
       th
 
   tbody
-    - @notes.each do |note|
-      tr
-        td = note.text
-        td = note.reviewed_at
-        td = link_to 'Show', note
-        td = link_to 'Edit', edit_note_path(note)
-        td = link_to 'Destroy', note, data: {:confirm => 'Are you sure?'}, :method => :delete
+    = render 'list'
 
 br
 

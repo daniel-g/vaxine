@@ -4,6 +4,19 @@ p
   strong Email:
   = user.email
 
+h2 Notas
+table
+  thead
+    tr
+      th Text
+      th Reviewed at
+      th
+      th
+      th
+
+  tbody
+    = render 'notes/list'
+
 = link_to 'Edit', edit_user_path(user)
 '|
 = link_to 'Back', users_path

@@ -7,6 +7,10 @@
           li = message
 
   .field
-    = f.label :correo
-    = f.text_field :correo
+    div
+      = f.label :correo
+      = f.text_field :correo
+    div
+      = f.label :type
+      = f.select :type, {'Veterinario' => 'veterinarian', 'Cliente' => 'client'}
   .actions = f.submit 'Enviar'
