@@ -4,7 +4,14 @@ class PetsController < ApplicationController
   # GET /pets
   # GET /pets.json
   def index
+  end
+
+  def pets
     @pets = Pet.all
+  end
+
+  def users
+    User.limit(1)
   end
 
   # GET /pets/1
