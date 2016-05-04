@@ -1,5 +1,8 @@
 h1 Usuarios
 
+= form_for search_form, url: users_path, method: :get do |form|
+  = form.text_field :email
+  = form.submit 'Buscar'
 table
   thead
     tr

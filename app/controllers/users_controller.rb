@@ -2,6 +2,11 @@ class UsersController < ApplicationController
   expose(:user)
   expose(:users)
   expose(:user_form){ NewUserForm.new(user_params, user: user) }
+  expose(:search_form){ SearchForm.new(search_params) }
+
+  def index
+    self.users = SearchService.new(search_form).search!
+  end
 
   # POST /users
   # POST /users.json
@@ -47,5 +52,10 @@ class UsersController < ApplicationController
   def user_params
     return {} unless params[:user].present?
     params.require(:user).permit(:correo)
+  end
+
+  def search_params
+    return {} unless params[:search].present?
+    params.require(:search)
   end
 end
