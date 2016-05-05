@@ -1,4 +1,4 @@
-class SearchService
+class Search::SearchService
   attr_accessor :form, :search
 
   def initialize(search_form)
@@ -14,6 +14,9 @@ class SearchService
   private
 
   def filter_email
-    self.search = search.where('users.email like ?', "%#{ form.email.presence }%")
+    self.search = search.where(
+      'users.email like ?',
+      "%#{ form.email.presence }%"
+    )
   end
 end

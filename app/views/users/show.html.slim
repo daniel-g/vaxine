@@ -2,7 +2,10 @@ p#notice = notice
 
 p
   strong Email:
-  = user.email
+  = user_presenter.email
+p
+  strong Notify Birthday:
+  = user_presenter.notify_birthday
 
 h2 Notas
 table

@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
   expose(:user)
   expose(:users)
+  expose(:user_presenter){ UserDecorator.new(user) }
   expose(:notes, ancestor: :user)
   expose(:user_form){ NewUserForm.new(user_params, user: user) }
   expose(:search_form){ SearchForm.new(search_params) }
 
   def index
-    self.users = SearchService.new(search_form).search!
+    self.users = Search::SearchService.new(search_form).search!
   end
 
   # POST /users
