@@ -1,0 +1,23 @@
+h1 Vacunas
+
+table
+  thead
+    tr
+      th Nombre
+      th Aplicación (semanas)
+      th
+      th
+      th
+
+  tbody
+    - vaccines.each do |vaccine|
+      tr
+        td = vaccine.name
+        td = vaccine.periodicity
+        td = link_to 'Mostrar', vaccine
+        td = link_to 'Editar', edit_vaccine_path(vaccine)
+        td = link_to 'Eliminar', vaccine, data: {:confirm => 'Está usted seguro?'}, :method => :delete
+
+br
+
+= link_to 'Nueva Vacuna', new_vaccine_path

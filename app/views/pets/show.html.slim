@@ -2,14 +2,14 @@ p#notice = notice
 
 p
   strong Name:
-  = @pet.name
+  = pet.name
 p
   strong Owner:
-  = @pet.owner_id
+  = pet.owner_id
 p
   strong Birthday:
-  = @pet.birthday
+  = pet.birthday
 
-= link_to 'Edit', edit_pet_path(@pet)
+= link_to 'Edit', edit_pet_path(pet)
 '|
 = link_to 'Back', pets_path
