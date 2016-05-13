@@ -1,3 +1,6 @@
+# Este presenter utiliza un user y sus notas para representar algo en la vista
+# Pudo perfectamente haber sido un decorator
+# Depende de la percepción del que implementa
 class UserPresenter
   attr_accessor :user
 

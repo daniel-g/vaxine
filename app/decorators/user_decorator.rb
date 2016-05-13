@@ -1,3 +1,4 @@
+# Esta clase me sirve para decorar ciertos atributos del User
 class UserDecorator
   attr_accessor :user
 

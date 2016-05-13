@@ -1,3 +1,6 @@
+# Un Service Object me da una interfaz específica
+# para un problema que necesito resolver.
+# En este caso la búsqueda general de users.
 class Search::SearchService
   attr_accessor :form, :search
 

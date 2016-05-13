@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
     strategy DecentExposure::StrongParametersStrategy
   end
 
+  # En caso que users sea una interfaz compartida para muchas vistas,
+  # puede colocarse en la clase padre
   def users
     @users = User.all
   end
