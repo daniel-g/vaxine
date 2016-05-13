@@ -2,11 +2,11 @@ p#notice = notice
 
 p
   strong Text:
-  = @note.text
+  = note.text
 p
   strong Reviewed at:
-  = @note.reviewed_at
+  = note.reviewed_at
 
-= link_to 'Edit', edit_note_path(@note)
+= link_to 'Edit', edit_note_path(note)
 '|
 = link_to 'Back', notes_path

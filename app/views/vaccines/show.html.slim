@@ -2,11 +2,11 @@ p#notice = notice
 
 p
   strong Name:
-  = @vaccine.name
+  = vaccine.name
 p
   strong Periodicity:
-  = @vaccine.periodicity
+  = vaccine.periodicity
 
-= link_to 'Edit', edit_vaccine_path(@vaccine)
+= link_to 'Edit', edit_vaccine_path(vaccine)
 '|
 = link_to 'Back', vaccines_path

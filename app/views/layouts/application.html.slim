@@ -1,6 +1,9 @@
 = content_for :body do
-  # Por ejemplo, el layput principal tiene opciones diferentes que layouts/admin
   nav
+    li= link_to 'Admins', admins_path
+    li= link_to 'Notas', notes_path
+    li= link_to 'Usuarios', users_path
+    li= link_to 'Vacunas', vaccines_path
     li= link_to 'Mascotas', pets_path
   = yield
 

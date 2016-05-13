@@ -1,8 +1,7 @@
 = content_for :body do
+  / Por ejemplo, el layout principal tiene opciones diferentes que este
   nav
     li= link_to 'Usuarios', users_path
-    li= link_to 'Vacunas', vaccines_path
-    li= link_to 'Mascotas', pets_path
   = yield
 
 = render 'layouts/base'

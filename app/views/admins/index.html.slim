@@ -9,7 +9,7 @@ table
       th
 
   tbody
-    - @admins.each do |admin|
+    - admins.each do |admin|
       tr
         td = admin.email
         td = link_to 'Show', admin

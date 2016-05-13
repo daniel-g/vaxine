@@ -1,6 +1,6 @@
 class VaccinesController < ApplicationController
   expose(:vaccines)
-  expose(:vaccine)
+  expose(:vaccine, attributes: :vaccine_params)
 
   # POST /vaccines
   # POST /vaccines.json

@@ -1,9 +1,9 @@
-= form_for @pet_vaccine do |f|
-  - if @pet_vaccine.errors.any?
+= form_for pet_vaccine do |f|
+  - if pet_vaccine.errors.any?
     #error_explanation
-      h2 = "#{pluralize(@pet_vaccine.errors.count, "error")} prohibited this pet_vaccine from being saved:"
+      h2 = "#{pluralize(pet_vaccine.errors.count, "error")} prohibited this pet_vaccine from being saved:"
       ul
-        - @pet_vaccine.errors.full_messages.each do |message|
+        - pet_vaccine.errors.full_messages.each do |message|
           li = message
 
   .field
