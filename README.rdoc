@@ -1,28 +1,17 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Esta es una apliación de prueba donde se explican algunas estrategias en Rails que pueden resultar útiles
 
-Things you may want to cover:
+1. Desarrollar interfaces, no implementaciones. Se utilizó decent_exposure para ejemplificarlo en el controlador y las vistas.
+2. Form Objects
+3. Service Objects
+4. Polimorfismo
+5. STI
+6. Presenters
+7. Decorators
+8. Mútiples layouts
+9. Bower
 
-* Ruby version
+== Contribución
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Si alguien quisiera contribuir al repo, solo basta con crear un pull request :)
